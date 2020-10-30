@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="happlese, Archineering the future, #atOffice24x7, Optimum Structural Designs, Precise land Surveys, Geospacial survey, WHO ARE WE, WHY CHOOSE US, 01, 02, 03, 04, The power of Integrated Services">
@@ -11,9 +12,8 @@
 <link rel="stylesheet" href="Home.css" media="screen">
     <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
-    <script src="https://smtpjs.com/v3/smtp.js"> </script> 
-	<meta name="generator" content="Nicepage 2.26.5, nicepage.com">
     
+	<meta name="generator" content="Nicepage 2.26.5, nicepage.com">
     
     
     
@@ -21,12 +21,69 @@
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Slab:100,300,400,700|Allerta:400">
     
-    
-    
-    
-    
-    
-    
+       
+    <script src="C:\Users\Ramakrishna\Documents\Nicepage Templates\Site5\email1.jsp"> </script>
+<script type="text/javascript"> 
+
+function ValidateEmail(mail) 
+{
+	var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if(mail.match(mailformat))
+{
+//alert("Valid email address!");
+//document.form1.text1.focus();
+return true;
+}
+else
+{
+alert("You have entered an invalid email address!");
+//document.form1.text1.focus();
+return false;
+}
+}
+
+
+
+	function sendEmail(name1, mail1, body1) {
+
+	if(name1=="")
+	{
+		alert("Enter Valid Name");
+		document.form2.name.focus();
+		return;
+	}
+	if(mail1==""){
+		alert("Enter email address");
+		document.form2.email.focus();
+		return;
+	}
+	if(ValidateEmail(mail1)){}else{document.form2.email.focus();return;}
+	if(body1==""){
+		alert("Please enter your message");
+		//document.form2.message.focus();
+		document.getElementById("message-da97").focus();
+		return;
+	}
+	
+	
+	Email.send({ 
+		Host: "smtpout.secureserver.net", 
+		Username: "info@synapsearchineers.com", 
+		Password: "SynapseInfo@133", 
+		To: 'info@synapsearchineers.com', 
+		From: mail1, 
+		Subject: name1, 
+		Body: body1, 
+	}) 
+		.then(function (message) { 
+		alert("Thank you! Your mail has been sent successfully") 
+		document.getElementById('name-da97').value=" ";
+		document.getElementById('email-da97').value=" ";
+		document.getElementById('message-da97').value=" ";
+		}); 
+	} 
+	
+	</script>
     <script type="application/ld+json">{
 		"@context": "http://schema.org",
 		"@type": "Organization",
@@ -39,23 +96,7 @@
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="index.html">
     <meta property="og:url" content="index.html">
-	
-	<script type="text/javascript"> 
-	function sendEmail(a,b,c) { 
-	Email.send({ 
-		Host: "smtp.gmail.com", 
-		Username: "ramakrishna.guruvaya1@gmail.com", 
-		Password: "552", 	
-		To: 'ramakrishna_178@yahoo.co.in', 
-		From: b, 
-		Subject: a, 
-		Body: c, 
-	}) 
-		.then(function (message) { 
-		alert("Thank you! Your mail has been sent successfully") 
-		}); 
-	} 
-</script> 
+	 
 	
 	
   </head>
@@ -205,7 +246,7 @@ are Successful Architects and Engineers with tremendous experience in Civil Engi
                     <div class="u-container-layout u-container-layout-3">
                       <h3 class="u-text u-text-body-alt-color u-text-5">Strive to deliver</h3>
                       <h6 class="u-text u-text-body-alt-color u-text-6">Time Management</h6>
-                      <p class="u-text u-text-body-alt-color u-text-default u-text-7">Construction activities bound to delay due to improper planning and management and most of the time lead to cost over budget. We apply latest construction manageemnt techniues to avoid delays as we understand construction is a major milestone in everyone's life.&nbsp;<br>
+                      <p class="u-text u-text-body-alt-color u-text-default u-text-7">Construction activities bound to delay due to improper planning and management and most of the time lead to cost over budget. We apply latest construction manageemnt techniques to avoid delays as we understand construction is a major milestone in everyone's life.&nbsp;<br>
                       </p>
                     </div>
                   </div>
@@ -222,7 +263,7 @@ are Successful Architects and Engineers with tremendous experience in Civil Engi
                     <div class="u-container-layout u-container-layout-5">
                       <h3 class="u-text u-text-8">team of qualified engineers</h3>
                       <h6 class="u-text u-text-9">Quality Management</h6>
-                      <p class="u-text u-text-10">NEDO (National Economic Development Office), London survey aimed at improving methods of quality control for building works it was found that "design" and "poor workmanship in the construction process" combined to form more than 90% of the total failure events.&nbsp;We focus on every minute tasks and ensure the quality of the project is up to the expectations and standards<br>
+                      <p class="u-text u-text-10">NEDO (National Economic Development Office), London survey aimed at improving methods of quality control for building works it was found that "design" and "poor workmanship in the construction process" combined to form more than 90% of the total failure events.&nbsp;We focus on every minute task and ensure the quality of the project is up to the expectations and standards<br>
                       </p>
                     </div>
                   </div>
@@ -392,7 +433,7 @@ design footings, earth retaining structures and earth structures&nbsp;&nbsp;</p>
                   <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-40 u-layout-cell-4">
                     <div class="u-container-layout u-container-layout-4">
                       <div class="u-form u-form-1">
-                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form-2">
+                        <form action="#" method="POST" class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" style="padding: 10px" source="custom" name="form2">
                           <div class="u-form-group u-form-name u-form-group-1">
                             <label for="name-da97" class="u-form-control-hidden u-label" id="ramram01">Name</label>
                             <input type="text" placeholder="Enter your Name" id="name-da97" name="name" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required="">
@@ -406,9 +447,15 @@ design footings, earth retaining structures and earth structures&nbsp;&nbsp;</p>
                             <textarea placeholder="Enter your message" rows="4" cols="50" id="message-da97" name="message" class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle" required=""></textarea>
                           </div>
                           <div class="u-form-group u-form-submit u-form-group-4">
-                            <a href="https://nicepage.com" class="u-btn u-btn-submit u-button-style">Submit</a>
-                            <input type="submit" value="submit" class="u-form-control-hidden" onclick="sendEmail(document.getElementById('ramram01'),document.getElementById('ramram02'),document.getElementById('ramram03'))">
-                          </div>
+                            
+                            
+							<!-- <input type="submit" value="submit" class="u-form-control-hidden" onclick="sendEmail(document.getElementById('ramram01'),document.getElementById('ramram02'),document.getElementById('ramram03'))"> -->
+						  </div>
+						  
+							<input type="button" value="Send Email"
+								onclick="sendEmail(document.getElementById('name-da97').value, document.getElementById('email-da97').value, document.getElementById('message-da97').value )" /> 
+							</form>
+		
                           <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                           <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                           <input type="hidden" value="" name="recaptchaResponse">
