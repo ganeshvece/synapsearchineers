@@ -1,7 +1,29 @@
 <!DOCTYPE html>
 <html style="font-size: 16px;">
   <head>
+<! -- zooming image st -->
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
+.zoom {
+  padding: 50px;
+  
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(3); /* IE 9 */
+  -webkit-transform: scale(3); /* Safari 3-8 */
+  transform: scale(3); 
+}
+	<! -- zooming image ends-->
+</style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="happlese, Archineering the future, #atOffice24x7, Optimum Structural Designs, Precise land Surveys, Geospacial survey, WHO ARE WE, WHY CHOOSE US, 01, 02, 03, 04, The power of Integrated Services">
@@ -319,7 +341,11 @@ are Successful Architects and Engineers with tremendous experience in Civil Engi
           <div class="u-container-style u-list-item u-opacity u-opacity-45 u-palette-5-dark-2 u-repeater-item u-video-cover u-list-item-1">
             <div class="u-container-layout u-similar-container u-container-layout-1">
               <h4 class="u-align-center u-text u-text-3">Workshop at Dulapally</h4>
-              <p class="u-align-center u-text u-text-4"><img src="images/IMG-20210212-WA0000.jpg" class="u-logo-image u-logo-image-1" data-image-width="250"></p>
+              <p class="u-align-center u-text u-text-4"><div class="zoom">
+<img src= "images/IMG-20210212-WA0000_1.jpg"
+                 onclick="enlargeImg()" 
+                 id="img1" />
+</div>
             </div>
           </div>
        	</div>
