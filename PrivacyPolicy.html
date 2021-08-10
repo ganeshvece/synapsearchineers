@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link href="bootstrap.css" rel="stylesheet" />
+    <! --Image Slider -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+
+        .mySlides {
+            display: none
+        }
+
+        .w3-left, .w3-right, .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0
+        }
+    </style>
+    <! -- Image Sider-->
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="happlese, Archineering the future, #atOffice24x7, Optimum Structural Designs, Precise land Surveys, Geospacial survey, WHO ARE WE, WHY CHOOSE US, 01, 02, 03, 04, The power of Integrated Services">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Synapse Archineers</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen">
+    <link rel="stylesheet" href="Home.css" media="screen">
+    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+
+    <meta name="generator" content="Nicepage 2.26.5, nicepage.com">
+
+
+
+
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto+Slab:100,300,400,700|Allerta:400">
+
+    <script src="email1.jsp"></script>
+
+    <script type="text/javascript">
+
+
+        var slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            var i;
+            var x = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" w3-white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " w3-white";
+        }
+
+        function ValidateEmail(mail) {
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (mail.match(mailformat)) {
+                //alert("Valid email address!");
+                //document.form1.text1.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                //document.form1.text1.focus();
+                return false;
+            }
+        }
+
+
+
+        function sendEmail(name1, mail1, body1) {
+
+            if (name1 == "") {
+                alert("Enter Valid Name");
+                document.form2.name.focus();
+                return;
+            }
+            if (mail1 == "") {
+                alert("Enter email address");
+                document.form2.email.focus();
+                return;
+            }
+            if (ValidateEmail(mail1)) { } else { document.form2.email.focus(); return; }
+            if (body1 == "") {
+                alert("Please enter your message");
+                //document.form2.message.focus();
+                document.getElementById("message-da97").focus();
+                return;
+            }
+
+
+            Email.send({
+                Host: "smtpout.secureserver.net",
+                Username: "info@synapsearchineers.com",
+                Password: "SynapseInfo@133",
+                To: 'info@synapsearchineers.com',
+                From: mail1,
+                Subject: name1,
+                Body: body1,
+            })
+                .then(function (message) {
+                    alert("Thank you! Your mail has been sent successfully")
+                    document.getElementById('name-da97').value = " ";
+                    document.getElementById('email-da97').value = " ";
+                    document.getElementById('message-da97').value = " ";
+                });
+        }
+
+
+
+
+
+
+
+    </script>
+    <script type="application/ld+json">
+        {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "",
+        "url": "index.html",
+        "logo": "images/slogo.jpg"
+        }
+    </script>
+    <meta property="og:title" content="Home">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#478ac9">
+    <link rel="canonical" href="index.html">
+    <meta property="og:url" content="index.html">
+</head>
+<body data-home-page="Home.html" data-home-page-title="Home" class="u-body u-overlap">
+    <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-7cec">
+        <div class="u-clearfix u-sheet u-sheet-1" onload="plusDivs(1)">
+            <a href="https://nicepage.com" class="u-image u-logo u-image-1">
+                <img src="images/Logo1.bmp" class="u-logo-image u-logo-image-1" data-image-width="251.3548">
+            </a>
+            <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+                <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0;">
+                    <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="#">
+                        <svg><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <defs>
+                                <symbol id="menu-hamburger" viewBox="0 0 16 16" style="width: 16px; height: 16px;">
+                                    <rect y="1" width="16" height="2"></rect>
+                                    <rect y="7" width="16" height="2"></rect>
+                                    <rect y="13" width="16" height="2"></rect>
+                                </symbol>
+                            </defs>
+                        </svg>
+                    </a>
+                </div>
+                <div class="u-custom-menu u-nav-container">
+                    <ul class="u-nav u-unstyled u-nav-1">
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="Home.html" style="padding: 10px 20px;">Home</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="#sec-b72c" target="_blank" style="padding: 10px 20px;">Know us</a>
+
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="#carousel_f900" style="padding: 10px 20px;">Projects</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="#carousel_f900" style="padding: 10px 20px;">Services</a>
+                        </li>
+                        <li class="u-nav-item">
+                            <a class="u-button-style u-nav-link u-text-active-palette-1-base u-text-custom-color-2 u-text-hover-palette-2-base" href="#sec-8496" style="padding: 10px 20px;">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="u-custom-menu u-nav-container-collapse">
+                    <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                        <div class="u-menu-close"></div>
+                        <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="Home.html" style="padding: 10px 20px;">Home</a>
+                            </li>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="#sec-b72c" target="_blank" style="padding: 10px 20px;">Know us</a>
+
+                            </li>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="#carousel_f900" style="padding: 10px 20px;">Projetcs</a>
+                            </li>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="#carousel_f900" style="padding: 10px 20px;">Services</a>
+                            </li>
+                            <li class="u-nav-item">
+                                <a class="u-button-style u-nav-link" href="#sec-8496" style="padding: 10px 20px;">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+                </div>
+            </nav>
+
+            <div class="row">
+                <div class="offset-1">
+                    <h1 class="h1">PRIVACY POLICY</h1>
+
+                </div>
+            </div>
+
+        </div>
+    </header>
+</body>
+</html>
