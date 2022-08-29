@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/Site.css" rel="stylesheet" />
+    <link href="css/menuStyle.css" rel="stylesheet" />
+    <script>
+        function ValidateEmail(mail) {
+            var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            if (mail.match(mailformat)) {
+                //alert("Valid email address!");
+                //document.form1.text1.focus();
+                return true;
+            }
+            else {
+                alert("You have entered an invalid email address!");
+                //document.form1.text1.focus();
+                return false;
+            }
+        }
+
+
+
+        function sendEmail(name1, mail1, body1) {
+
+            if (name1 == "") {
+                alert("Enter Valid Name");
+                document.form2.name.focus();
+                return;
+            }
+            if (mail1 == "") {
+                alert("Enter email address");
+                document.form2.email.focus();
+                return;
+            }
+            if (ValidateEmail(mail1)) { } else { document.form2.email.focus(); return; }
+            if (body1 == "") {
+                alert("Please enter your message");
+                //document.form2.message.focus();
+                document.getElementById("message-da97").focus();
+                return;
+            }
+
+
+            Email.send({
+                Host: "smtpout.secureserver.net",
+                Username: "info@synapsearchineers.com",
+                Password: "SynapseInfo@133",
+                To: 'info@synapsearchineers.com',
+                From: mail1,
+                Subject: name1,
+                Body: body1,
+            })
+                .then(function (message) {
+                    alert("Thank you! Your mail has been sent successfully")
+                    document.getElementById('name-da97').value = " ";
+                    document.getElementById('email-da97').value = " ";
+                    document.getElementById('message-da97').value = " ";
+                });
+        }
+    </script>
+</head>
+<body>
+    <section id="Home">
+        <div class="navbar navbar-inverse navbar-fixed-top styleContainer">
+            <div class="container styleContainer ">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/SA_Logo_New.svg" style="width:90%" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right navbar_custom" style="padding-top:10px">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#KnowUs">Know Us</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div style="overflow: auto;">
+                    <div class="main1" style="background-color:#5d0b1d;">
+                        <div class="slideshow-container">
+                            <div class="mySlides fade1">
+                                <div class="numbertext">1 / 5</div>
+                                <img src="images/Archineering The Future.jpg" style="width:100%;height:auto">
+                                <div class="mytext1 mytext4">Archineering the Future</div>
+                                <div class="mytext2 mytext4">Let us build your dream Home</div>
+                            </div>
+                            <div class="mySlides fade1">
+                                <div class="numbertext">2 / 5</div>
+                                <img src="images/office.jpg" style="width: 100%; height: auto">
+                                <div class="mytext1 mytext4">#atOffice24x7</div>
+                                <div class="mytext2 mytext4">Build mesmerizing offices</div>
+                            </div>
+                            <div class="mySlides fade1">
+                                <div class="numbertext">3 / 5</div>
+                                <img src="images/Optimum Structural Designs.jpg" style="width: 100%; height: auto">
+                                <div class="mytext1 mytext4">Optimum Structural Designs</div>
+                                <div class="mytext2 mytext4">
+                                    We design structures that are economical
+                                    yet creates history in future
+                                </div>
+                            </div>
+                            <div class="mySlides fade1">
+                                <div class="numbertext">4 / 5</div>
+                                <img src="images/Precise Land Surveys.jpg" style="width: 100%; height: auto">
+                                <div class="mytext1 mytext4">Precise land Surveys</div>
+                                <div class="mytext2 mytext4">Our experts conduct accurate surveying</div>
+                            </div>
+                            <div class="mySlides fade1">
+                                <div class="numbertext">5 / 5</div>
+                                <img src="images/Geospatial Survey.jpg" style="width: 100%; height: auto">
+                                <div class="mytext1 mytext4">Geospacial survey</div>
+                            </div>
+                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                            <a class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
+                        <br>
+                        <div style="text-align:center">
+                            <span class="dot" onclick="currentSlide(1)"></span>
+                            <span class="dot" onclick="currentSlide(2)"></span>
+                            <span class="dot" onclick="currentSlide(3)"></span>
+                            <span class="dot" onclick="currentSlide(4)"></span>
+                            <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p id="demo"></p>
+                        <p id="demo1"></p>
+                    </div>
+                </div>
+            </div>
+            <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">©2020 Synapse Archineers Private Limited. All Rights Reserved.</div>
+            <script>
+                var slideIndex = 0;
+                showSlides();
+                function plusSlides(n) {
+                    showSlides1(slideIndex += n);
+                }
+                function showSlides1(n) {
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides");
+                    let dots = document.getElementsByClassName("dot");
+                    if (n > slides.length) { slideIndex = 1 }
+                    if (n < 1) { slideIndex = slides.length }
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+                    dots[slideIndex - 1].className += " active";
+                }
+                function showSlides() {
+                    var i;
+                    var slides = document.getElementsByClassName("mySlides");
+                    var dots = document.getElementsByClassName("dot");
+
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+
+                    }
+
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    for (i = 0; i < dots.length; i++) {
+                        dots[i].className = dots[i].className.replace(" active", "");
+
+                    }
+                    slides[slideIndex - 1].style.display = "block";
+
+
+
+
+                    dots[slideIndex - 1].className += " active";
+                    setTimeout(showSlides, 3000); // Change image every 2 seconds
+
+                }
+
+            </script>
+
+        </div>
+    </section>
+    <section id="KnowUs">
+        <div class="navbar navbar-inverse navbar-fixed-top styleContainer">
+            <div class="container styleContainer">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/SA_Logo_New.svg" style="width:90%" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" style="padding-top:10px">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#KnowUs">Know Us</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" style=" background-color:#c24141;height:350px;">
+            <div class="col-md-offset-2 col-xs-offset-1 col-xs-10 col-md-8 knowUsText" style="color:white;margin-top:10%;text-align:center">
+                <h3 class="h2" style="text-align:center;">WHO ARE WE</h3>
+                <h5 class="h4">We are Successful Architects and Engineers with tremendous experience in Civil Engineering Industry & Geospatial solutions</h5>
+            </div>
+        </div>
+
+        <div class="row" style="background-color:white">
+            <h1 class="h1" style="text-align: center; color: black; padding-left: 20px;">WHY CHOOSE US</h1>
+            <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-lg-11 col-md-11 col-sm-11 paddingPage">
+                <div class="col-md-3 col-sm-5 col-xs-8" style="background-color: #7c0707; margin-left: 70px; margin-top: 15px; border-style: ridge; min-height: 350px; min-width: 350px; border: 1px solid #333; box-shadow: 5px 5px 5px #444; padding: 8px 12px; color: white; ">
+                    <h2 class="h2" style="text-align:center;">TWO DECADES OF EXPERIENCE</h2>
+                    <h3 class="h3">Experience and Expertise</h3>
+                    <p>We have experience across all markets, asset classes, and stages of the project life cycle. We hold deep sector and market knowledge, and senior technical experts with decades of industry experience in design and construction.</p>
+                    <br />
+                </div>
+                <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="background-color:#7c0707;color:#9b1414;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;min-width:350px;text-align:center;justify-content:center;display:flex">
+                    <img src="images/target1.svg" style="width:80%;height:auto" />
+                </div>
+                <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;min-width:350px;">
+                    <h2 class="h2">STRIVE TO DELIVER</h2>
+                    <h3>Time Management</h3>
+                    <p>Construction activities bound to delay due to improper planning and management and most of the time lead to cost over budget. We apply latest construction manageemnt techniques to avoid delays as we understand construction is a major milestone in everyone's life. </p>
+                    <br />
+                </div>
+                <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="background-color:#7c0707;color:#9b1414;margin-left:70px;margin-top:15px;border-style:ridge;height:350px; min-height:350px;min-width:350px;text-align:center;justify-content:center;display:flex">
+                    <img src="images/balloons.png" style="width:87%;height:auto" />
+                </div>
+                <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;height:350px; min-width:350px;">
+                    <h2 class="h2">TEAM OF QUALIFIED ENGINEERS</h2>
+                    <h3>Time Management</h3>
+                    <p>Construction activities bound to delay due to improper planning and management and most of the time lead to cost over budget. We apply latest construction manageemnt techniques to avoid delays as we understand construction is a major milestone in everyone's life. </p>
+                    <br />
+                </div>
+                <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="background-color:#7c0707;color:#9b1414;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;height:350px; min-width:350px;text-align:center;justify-content:center;display:flex">
+                    <img src="images/RightSymbol.png" style="width:100%;height:auto" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top:10px;">
+            <img src="images/Rocket.jpg" class="img-responsive" style=" width:100%;height:auto" />
+
+            <div class="row" style="background-color:white">
+                <div class="col-lg-offset-1 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-lg-11 col-md-11 col-sm-11" style="margin-top:-420px">
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:70px; margin-top:15px;border-style:ridge;min-height:350px;min-width:350px;">
+                        <h2 class="h2" style="text-align:center;">MISSION</h2>
+                        <p>To provide the best in Industry services by consistently meeting the customer expectations and completing projects IN TIME as we understand construction is an important milestone in everyone's life.</p>
+                        <p>To bring in latest technology in the Construction & Geospacial industry.</p>
+                        <br />
+                    </div>
+                    <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;height:350px; min-width:350px;">
+                        <h2 class="h2">VALUES</h2>
+                        <p>With our passion to complete projects on time, immense experience, respect towards individuals, sence of responsiblity & top priority as customer satisfaction we would like to build lifelong relationship..</p>
+                        <br />
+                    </div>
+                    <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:70px;margin-top:15px;border-style:ridge;min-height:350px;min-width:350px;">
+                        <h2 class="h2">VISION</h2>
+                        <p>To become most preferred partner in the Industry.</p>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">©2020 Synapse Archineers Private Limited. All Rights Reserved.</div>
+    </section>
+    <section id="Projects">
+        <div class="navbar navbar-inverse navbar-fixed-top styleContainer">
+            <div class="container styleContainer">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/SA_Logo_New.svg" style="width:90%" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" style="padding-top:10px">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#KnowUs">Know Us</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="height: 150px; background-color: #a52525">
+
+        </div>
+        <div class="row" style="background-color:#a52525;">
+            <br />
+            <div class="col-md-offset-1 col-md-5">
+                <div style=" max-width:100%;">
+                    <h1 class="h2" style="color:white">Site1: At Dulapally</h1>
+                    <form id="form1" runat="server" style="max-width:100%;border:0px;">
+                        <div>
+                            <div>
+                                <div id="myCarousel" data-interval="2000" class="carousel slide" data-ride="carousel" style="max-width:100%;border:0px;">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" style="width:100%">
+                                        <div class="item active">
+                                            <img src="images/Dulapally1.jpg" style="width:auto;height:500px;" />
+                                            <div class="carousel-caption">
+                                                <p>Image One</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="images/Dulapally2.jpg" alt="Chicago" style="width:auto;height:500px" />
+                                            <div class="carousel-caption">
+                                                <p>Image Two </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                        <span class="icon-prev" style="color:red;font-size:100px;"></span><!--earlier class was glyphicon glyphicon-chevron-left-->
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                        <span class="icon-next" style="color:red;font-size:100px;"></span> <!--earlier class was glyphicon glyphicon-chevron-right-->
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-md-5">
+                <h1 class="h2" style="color:white">Site2:At Bandlaguda</h1>
+                <div style=" max-width:100%;">
+                    <form id="form1" runat="server" style="max-width:100%;border:0px;">
+                        <div>
+                            <div>
+                                <div id="myCarousel1" data-interval="2000" class="carousel slide" data-ride="carousel" style="max-width:100%;border:0px;">
+                                    <!-- Indicators -->
+                                    <ol class="carousel-indicators">
+                                        <li data-target="#myCarousel1" data-slide-to="0" class="active"></li>
+                                        <li data-target="#myCarousel1" data-slide-to="1"></li>
+                                        <li data-target="#myCarousel1" data-slide-to="2"></li>
+                                    </ol>
+
+                                    <!-- Wrapper for slides -->
+                                    <div class="carousel-inner" style="width:100%">
+                                        <div class="item active">
+                                            <img src="images/Bandlaguda1.jpeg" style="width:auto;height:500px;" />
+                                            <div class="carousel-caption">
+                                                <p>Concept</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="images/Bandlaguda2_Resize.jpg" alt="Chicago" style="width:auto;height:500px;" />
+                                            <div class="carousel-caption">
+                                                <p>Current Status</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="item">
+                                            <img src="images/Bandlaguda3.jpg" alt="New York" style="width:auto;height:500px" />
+                                            <div class="carousel-caption">
+
+                                                <p>
+                                                    Expected - After Completion
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Left and right controls -->
+                                    <a class="left carousel-control" href="#myCarousel1" data-slide="prev">
+                                        <span class="icon-prev" style="color:red;font-size:100px;"></span>
+                                        <span class="sr-only">Previous</span>
+                                    </a>
+                                    <a class="right carousel-control" href="#myCarousel1" data-slide="next">
+                                        <span class="icon-next" style="color:red;font-size:100px;"></span>
+                                        <span class="sr-only">Next</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </form>
+                </div>
+                <br />
+            </div>
+        </div>
+        <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">©2020 Synapse Archineers Private Limited. All Rights Reserved.</div>
+    </section>
+    <section id="Services">
+        <div class="navbar navbar-inverse navbar-fixed-top styleContainer">
+            <div class="container styleContainer">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/SA_Logo_New.svg" style="width:90%" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" style="padding-top:10px">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#KnowUs">Know Us</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <br />
+            <br />
+            <br />
+            <div class="col-md-offset-1 col-sm-offset-1 col-xs-offset-1 col-md-10 col-sm-10 col-xs-10 knowUsText">
+                <h1 class="h1" style="text-align:center;color:black">The Power of Integrated Services</h1>
+                <h2 style="text-align:center; color:black;margin-top:-10px;">_________</h2>
+                <div class="col-md-offset-2 col-md-8">
+                    <p class="h4" style="font-style:italic;text-align:center;color:black">Our Integrated Building Services can help customers in recieving E2E consustruction solutions</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-2 col-lg-10 col-md-10 col-sm-10">
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Architects</h3>
+                        <p style="font-style:italic">Provide consulting services starting from Project inception till closure of the project. Of course we provide construction design documents which includes working documents & specifications</p>
+                    </div>
+                    <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="background-color:#7c0707;margin-left:15px;margin-top:15px;border-style:ridge;height:300px;">
+                        <div><h3 class="h3" style="text-align:center">Structural engineers</h3></div>
+                        <div style="padding:20px;">
+                            <p style="font-style:italic">Provide preliminary & detailed structural design documents for substructure and superstructur</p>
+                            <br />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                    <div class=" col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px;margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Construction</h3>
+                        <p style="font-style:italic">Provide consulting services starting from Project inception till closure of the project. Of course we provide construction design documents which includes working documents & specifications</p>
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Surveyors</h3>
+                        <p style="font-style:italic">We prepare topographical maps, engineering maps, cadastral maps, contour maps geological maps.</p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        &nbsp;
+                        &nbsp;
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Geotechnical engineers</h3>
+                        <p style="font-style:italic">We carry out site investigation, conduct soil tests and design footings, earth retaining structures and earth structures </p>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Transportation engineers</h3>
+                        <p style="font-style:italic">We deal with various phases like trafic and transportation studies and analysis, planning of road network,alignment, design of road geometrics,materials, pavements, maintenance of road projects</p>
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:10px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Pre Engineered Steel Buildings</h3>
+                        <p style="font-style:italic">We provide accurate, high quality & cost effective engineering services in Pre-Engineered Steel Buildings Industries & Solar structures</p>
+                        <br />
+                        <br />
+                        <br />
+
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:20px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Sanitary and public  health engineerins</h3>
+                        <p style="font-style:italic">We design water supply systems & sewarage system for domestic, industrial, commercial and public. Also we design water treatment plants, sewage treatment plants.</p>
+                        <br />
+
+                    </div>
+                    <div class="col-md-3 col-sm-5 col-xs-8 Box2" style="padding:10px;background-color:#7c0707;margin-left:15px; margin-top:15px;border-style:ridge;height:300px;">
+                        <h3 class="h3" style="text-align:center">Sanitary and public  health engineerins</h3>
+                        <p style="font-style:italic">We design water supply systems & sewarage system for domestic, industrial, commercial and public. Also we design water treatment plants, sewage treatment plants.</p>
+                        <br />
+                        <br />
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">©2020 Synapse Archineers Private Limited. All Rights Reserved.</div>
+    </section>
+    <section id="Contact">
+        <div class="navbar navbar-inverse navbar-fixed-top styleContainer">
+            <div class="container styleContainer">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="images/SA_Logo_New.svg" style="width:90%" />
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right" style="padding-top:10px">
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#KnowUs">Know Us</a></li>
+                        <li><a href="#Projects">Projects</a></li>
+                        <li><a href="#Services">Services</a></li>
+                        <li><a href="#Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="col-md-offset-1 col-md-10 knowUsText" style="background-color: white;">
+                <div class="col-md-offset-1 col-md-5" style="background-color: white; margin-top: 20px; margin-left: 75px; margin-bottom: 20px;">
+                    <h2 class="h2">Location</h2>
+                    <h3 class="h3">Synapse Archineers Private Limited</h3>
+                    <h4 class="h4">3-4-937/117/A/1,</h4>
+                    <h4 class="h4">Ratnanagar, Barkatpura, </h4>
+                    <h4 class="h4">Hyderabad,</h4>
+                    <h4 class="h4">Telangana - 500027, </h4>
+                    <h4 class="h4">INDIA</h4>
+                    <br />
+                    <h3 class="h3">+91 798 1533 018</h3>
+                    <h3 class="h3">info@synapsearchineers.com</h3>
+                    <br />
+                </div>
+                <div class="col-md-5" style="background-color:white;margin-top:20px;margin-left:50px;">
+                    <br />
+                    <br />
+
+                    <form action="#" method="POST" style="padding: 10px" source="custom" name="form2">
+                        <br />
+                        <div class="u-form-group u-form-name u-form-group-1">
+                            <label for="name-da97" class="" id="ramram01">Name</label>
+                            <input type="text" id="name-da97" placeholder="" name="name" class="form-control" required="">
+                        </div>
+                        <div class="u-form-email u-form-group u-form-group-2">
+                            <label for="email-da97" class="" id="ramram02">Email</label>
+                            <input type="email" placeholder="" id="email-da97" name="email" class="form-control" required="">
+                        </div>
+                        <div class="u-form-group u-form-message u-form-group-3">
+                            <label for="message-da97" class="for," id="ramram03">Message</label>
+                            <textarea placeholder="" rows="4" cols="50" id="message-da97" name="message" class="form-control" required=""></textarea>
+                        </div>
+                        <div class="u-form-group u-form-submit u-form-group-4">
+
+
+                            <!-- <input type="submit" value="submit" class="u-form-control-hidden" onclick="sendEmail(document.getElementById('ramram01'),document.getElementById('ramram02'),document.getElementById('ramram03'))"> -->
+                        </div>
+                        <br />
+                        <input type="button" value="Send Email"
+                               onclick="sendEmail(document.getElementById('name-da97').value, document.getElementById('email-da97').value, document.getElementById('message-da97').value )" />
+                    </form>
+
+                    <!--  <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+                <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
+                <input type="hidden" value="" name="recaptchaResponse">-->
+                    <br />
+                </div>
+
+                <br />
+                <br />
+            </div>
+
+        </div>
+        <div class="row" style="background-color:#e5e5e5;text-align:center;padding:10px;margin-top:7px;">©2020 Synapse Archineers Private Limited. All Rights Reserved.</div>
+    </section>
+</body>
+</html>
